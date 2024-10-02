@@ -1,0 +1,16 @@
+{
+  "name": "class",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "node test.js"
+  },
+  "author": "Nabin Chaudhary",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
