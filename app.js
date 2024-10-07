@@ -124,9 +124,12 @@ app.use(express.json());
         fs.readFile(Task_Data,(error,data)=>{
             if(error){
                 const errorObj = {
-                    sta
-                }
-            }
+                    status: "error",
+                    message: "Error retreving tasks"
+                };
+                console.log(error);
+                res.status()
+            };
         })
      })
 
