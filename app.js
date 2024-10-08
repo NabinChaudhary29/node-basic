@@ -128,10 +128,53 @@ app.use(express.json());
                     message: "Error retreving tasks"
                 };
                 console.log(error);
-                res.status()
+                res.status(500).send(errorObj);
+            } else {
+                const successObj = {
+                    status: "success",
+                    message: "Task list fetched!",
+                    data: JSON.parse(data),
+                };
+                res.status(200).send(successObj);
+            }
+        });
+     });
+
+     app.get("/ntdl/tasks/:id", (req, res) => {
+        const id = req.params.id;
+      
+        fs.readFile(TASK_DATA, (error, data) => {
+          if (error) {
+            const errorObj = {
+              status: "error",
+              message: "Error retreiving tasks",
             };
-        })
-     })
+      
+            console.log(error);
+            res.status(500).send(errorObj);
+          } else {
+            //filter task by id
+            const TASK_DATA = JSON.parse(data).find((task) => task.id == id);
+      
+            if (TASK_DATA) {
+              const successObj = {
+                status: "success",
+                message: "Task List fetched!",
+                data: TASK_DATA,
+              };
+      
+              res.status(200).send(successObj);
+            } else {
+              const errorObj = {
+                status: "error",
+                message: "No Task Found!",
+              };
+      
+              res.status(500).send(errorObj);
+            }
+          }
+        });
+      });
 
 
 app.listen(PORT, (error)=>{

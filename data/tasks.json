@@ -18,21 +18,21 @@
         "type":"bad"
     },
     {
-        "id":1,
+        "id":4,
+        "task":"task1",
+        "hour":1,
+        "type":"bad"
+    },
+    {
+        "id":5,
         "task":"task1",
         "hour":1,
         "type":"good"
     },
     {
-        "id":1,
+        "id":6,
         "task":"task1",
         "hour":1,
-        "type":"good"
-    },
-    {
-        "id":1,
-        "task":"task1",
-        "hour":1,
-        "type":"good"
+        "type":"bad"
     }
 ]
